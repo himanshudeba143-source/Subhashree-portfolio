@@ -2,23 +2,25 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Subhashree Sahoo | Cyber Forensics Portfolio</title>
-
-<!-- Open Graph / Social Preview -->
-<meta property="og:title" content="Subhashree Sahoo | Cyber Forensics Portfolio">
-<meta property="og:description" content="Turning Digital Traces Into Actionable Evidence. Explore my cyber forensic portfolio.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="cover.png">
-<meta property="og:url" content="https://himanshudeba143-source.github.io/">
-
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<title>Himanshu Shekhar | Cybersecurity Portfolio</title>
 
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+<!-- FIX MOBILE VIEWPORT HEIGHT -->
+<script>
+function setVH() {
+  document.documentElement.style.setProperty(
+    '--vh',
+    `${window.innerHeight * 0.01}px`
+  );
+}
+setVH();
+window.addEventListener('resize', setVH);
+</script>
 
 <style>
 *{
@@ -30,9 +32,12 @@ html,body{
     width:100%;
     height:100%;
     overflow:hidden;
+    position:fixed;
     background:#010814;
     font-family:'Segoe UI',sans-serif;
 }
+
+/* Background Particles */
 canvas{
     position:fixed;
     inset:0;
@@ -41,24 +46,29 @@ canvas{
 
 /* Pages */
 .page{
-    position:absolute;
+    position:fixed;
+    top:0;
+    left:0;
     width:100vw;
-    height:100vh;
+    height:calc(var(--vh) * 100);
     display:flex;
     justify-content:center;
     align-items:center;
+    text-align:center;
     color:white;
-    transition:0.7s ease;
+    transition:transform 0.7s ease;
 }
+#page1{ z-index:2; }
 #page2{
+    z-index:1;
     background:rgba(0,0,0,0.88);
     transform:translateX(100%);
 }
 
 /* Overlay */
 .overlay{
-    text-align:center;
     padding:20px;
+    max-width:1000px;
 }
 
 /* Headings */
@@ -67,7 +77,7 @@ h1{
     font-family:'Orbitron',sans-serif;
     letter-spacing:2px;
 }
-h1 span{color:#00f5ff;}
+h1 span{ color:#00f5ff; }
 h2{
     margin:15px 0 25px;
     color:#cfd9ff;
@@ -91,7 +101,7 @@ h2{
     background:none;
     font-size:1.1rem;
     cursor:pointer;
-    transition:.3s;
+    transition:0.3s;
 }
 .btn:hover{
     background:#00f5ff;
@@ -115,10 +125,10 @@ h2{
     margin-bottom:20px;
 }
 .about-text{
-    max-width:800px;
+    max-width:850px;
     margin:auto;
     color:#dce4ff;
-    line-height:1.6;
+    line-height:1.7;
 }
 
 /* Tools */
@@ -126,7 +136,7 @@ h2{
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
-    gap:25px;
+    gap:22px;
     margin:45px 0;
 }
 .tool{
@@ -135,25 +145,23 @@ h2{
     gap:12px;
     padding:14px 24px;
     border:1px solid #00f5ff;
-    border-radius:18px;
+    border-radius:20px;
     color:#00f5ff;
     font-size:1rem;
     transition:0.4s;
-    animation:float 5s ease-in-out infinite;
+    animation:float 3s ease-in-out infinite;
 }
-.tool i{
-    font-size:1.4rem;
-}
+.tool i{ font-size:1.4rem; }
 .tool:hover{
-    transform:translateY(-8px) scale(1.05);
-    box-shadow:0 0 20px #00f5ff;
+    transform:translateY(-8px) scale(1.06);
     background:rgba(0,245,255,0.08);
+    box-shadow:0 0 20px #00f5ff;
 }
 
-/* Floating Animation */
+/* Floating Effect */
 @keyframes float{
-    0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-10px)}
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-10px); }
 }
 
 /* Contact Icons */
@@ -174,9 +182,9 @@ h2{
 }
 
 /* CV */
-.cv-btn{margin-top:30px;}
+.cv-btn{ margin-top:30px; }
 
-/* Tag */
+/* HS Tag */
 .tag{
     position:fixed;
     top:18px;
@@ -188,11 +196,19 @@ h2{
     text-shadow:0 0 15px #00f5ff;
     z-index:10;
 }
+
+/* Mobile Responsive */
+@media(max-width:768px){
+    h1{ font-size:2.2rem; }
+    h2{ font-size:1rem; }
+    .quote{ font-size:1rem; }
+    .about-text{ font-size:0.95rem; }
+}
 </style>
-<!-- Open Graph / Social Preview -->
-<meta property="og:title" content="Hello I'm Subhashree Sahoo" />
-<meta property="og:description" content="Cyberforensic Fresher | Portfolio" />
-<meta property="og:image" content="cover.png" />
+  <!-- LinkedIn Open Graph Tags -->
+<meta property="og:title" content="Hello I'm Himanshu Shekhar" />
+<meta property="og:description" content="Cybersecurity Fresher | Portfolio" />
+<meta property="og:image" content="image.png" />
 <meta property="og:url" content="https://himanshudeba143-source.github.io/" />
 <meta property="og:type" content="website" />
 </head>
@@ -200,18 +216,14 @@ h2{
 <body>
 
 <canvas id="particles"></canvas>
-<div class="tag">SS</div>
+<div class="tag">HS</div>
 
 <!-- PAGE 1 -->
 <div class="page" id="page1">
     <div class="overlay">
-        <h1>Hello I'm <span>Subhashree Sahoo</span></h1>
-        <h2>Turning Digital Traces Into Actionable Evidence.</h2>
-
-        <p class="quote">
-            “All power is within you: you can do anything and everything”
-        </p>
-
+        <h1>Hello I'm <span>Himanshu Shekhar</span></h1>
+        <h2>A Amorous Cybersecurity Fresher</h2>
+        <p class="quote">“All power is within you: you can do anything and everything”</p>
         <button class="btn" onclick="openPortfolio()">Explore my portfolio</button>
     </div>
 </div>
@@ -224,34 +236,35 @@ h2{
 
     <div class="overlay">
         <h1 class="about-title">ABOUT</h1>
+Motivated B.Tech student (2022-2026) in Electrical and Electronics Engineering with a strong foundation in both core and technical domains. Completed 10th and 12th from DAV Public School. Gained hands-on experience through technical internships at ITPlusPoint and CrusadersTechSolution, working on HTML, CSS, PHP, MSSQL, C#, and .NET MVC framework.
 
+Additionally, completed a core internship at OPTCL (Odisha Power Transmission Corporation Ltd.), acquiring practical knowledge in transmission line operations and electrical infrastructure. Skilled in Python, with a growing interest in Al/ML technologies.
+
+An active member of the College Council and Achievers Club, recognized for leadership, time management, and teamwork. Demonstrated strong organizational and collaborative skills while contributing to the successful conduct of an International Gateball Tournament.
+
+I am a passionate Cybersecurity fresher with strong interest in ethical hacking,
+
+network security, vulnerability assessment, and cyber defense mechanisms.
         <p class="about-text">
-            I am currently pursuing studies in forensic science.  
-            I have a keen interest in evidence analysis, laboratory techniques, and the application of scientific principles to criminal investigations.  
-            My academic exposure includes crime scene reconstruction, questioned document examination, trace evidence analysis, fingerprint development, and digital evidence handling.  
-            I strongly believe accuracy, ethics, and attention to detail are the backbone of forensic investigations.
+
         </p>
 
-        <!-- CYBER FORENSIC TOOLS -->
         <div class="tools">
-            <div class="tool"><i class="fas fa-hdd"></i> Autopsy</div>
-            <div class="tool"><i class="fas fa-microchip"></i> FTK Imager</div>
-            <div class="tool"><i class="fas fa-search"></i> EnCase</div>
-            <div class="tool"><i class="fas fa-file-alt"></i> X-Ways Forensics</div>
-            <div class="tool"><i class="fas fa-camera"></i> Crime Scene Documentation</div>
-            <div class="tool"><i class="fas fa-fingerprint"></i> Fingerprint Analysis</div>
-            <div class="tool"><i class="fas fa-folder-open"></i> Digital Evidence Handling</div>
-            <div class="tool"><i class="fas fa-dna"></i> Trace Evidence Analysis</div>
+            <div class="tool"><i class="fas fa-network-wired"></i> Nmap</div>
+            <div class="tool"><i class="fas fa-wave-square"></i> Wireshark</div>
+            <div class="tool"><i class="fas fa-bug"></i> Burp Suite</div>
+            <div class="tool"><i class="fas fa-skull-crossbones"></i> Metasploit</div>
+            <div class="tool"><i class="fab fa-linux"></i> Kali Linux</div>
         </div>
 
         <div class="contact-icons">
-            <a href="tel:+916371355406"><i class="fas fa-phone"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/subhashree1622" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="tel:+918093445600"><i class="fas fa-phone"></i></a>
+            <a href="https://www.instagram.com/__the_dead_rider__?igsh=MXBrc2dwZHRtdzZtbQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/himanshu-shekhar-muduly" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
 
         <div class="cv-btn">
-            <a href="Subhashree_Sahoo_CV.pdf" download class="btn">
+            <a href="Himanshu Shekhar, 8th Sem, Silicon University.pdf" download class="btn">
                 <i class="fas fa-download"></i> Download CV
             </a>
         </div>
@@ -272,26 +285,26 @@ function goBack(){
     page2.style.transform="translateX(100%)";
 }
 
-/* PARTICLES */
+/* Particles */
 const canvas=document.getElementById("particles");
 const ctx=canvas.getContext("2d");
 
 function resize(){
-    canvas.width=innerWidth;
-    canvas.height=innerHeight;
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
 }
 resize();
-addEventListener("resize",resize);
+window.addEventListener("resize",resize);
 
 let particles=[];
-for(let i=0;i<220;i++){
+for(let i=0;i<240;i++){
     particles.push({
         x:Math.random()*canvas.width,
         y:Math.random()*canvas.height,
-        r:Math.random()*1.4+0.4,
-        dx:(Math.random()-0.5)*0.5,
-        dy:(Math.random()-0.5)*0.5,
-        a:Math.random()*0.8+0.2
+        r:Math.random()*1.5+0.4,
+        dx:(Math.random()-0.5)*0.6,
+        dy:(Math.random()-0.5)*0.6,
+        a:Math.random()*0.9+0.1
     });
 }
 
